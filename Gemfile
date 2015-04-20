@@ -11,21 +11,25 @@ gem 'sinatra-contrib'
 # Use Thin for our web server
 gem 'thin'
 
+# DB stuff
 gem 'activesupport'
 gem 'activerecord'
 gem 'bcrypt-ruby'
 
+# Run requirements
 gem 'rake'
-
 gem 'shotgun'
 
-#for use with API
+# For use with API
 gem 'json'
 gem 'httparty'
 gem 'dotenv'
 gem 'nokogiri'
 
-#test gems (although I haven't tested)
+# Music stuff
+gem "discogs-wrapper"
+
+# Test gems (although I haven't tested)
 group :test do
   gem 'shoulda-matchers'
   gem 'rack-test'
