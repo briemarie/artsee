@@ -4,7 +4,7 @@ function goBack() {
 
 // This hides imperfect search results
 function noDisplay() {
-  if $('.bm-item-artists:not("Monet")')
+  if $(".bm-item-artists:contains('Monet')")
     $('.bm-item-artists').hide();
 }();
 
