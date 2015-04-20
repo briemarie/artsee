@@ -59,14 +59,20 @@ post '/search' do
   redirect "/#{params[:artist]}"
 end
 
-#This is the route for displaying the art from the API
+#This is the route for displaying the art from the museum API
 get '/:artist' do
 
-  uri = "https://www.brooklynmuseum.org/opencollection/api/?method=collection.search&version=1&format=html&&sort_field=name&image_results_limit=20&api_key=" + "#{ENV['API_KEY']}" + "&keyword=" + "#{params[:artist]}"
+  uri = "https://www.brooklynmuseum.org/opencollection/api/?method=collection.search&version=1&format=html&&sort_field=name&image_results_limit=20&api_key=" + "#{ENV['MUSEUM_API_KEY']}" + "&keyword=" + "#{params[:artist]}"
 
   doc = Nokogiri::HTML(open(uri))
   @art = doc.xpath("//li")
   p uri
+
+  # wrapper = Discogs::Wrapper.new("Artsee")
+  # auth_wrapper = Discogs::Wrapper.new("Artsee", app_key: "MUSIC_API_KEY", app_secret: "MUSIC_SECRET")
+  # search = auth_wrapper.search("Nirvana", :per_page => 10, :type => :artist)
+
+  # p search
 
   if @art.empty?
     erb :happy
@@ -74,6 +80,8 @@ get '/:artist' do
      erb :art
   end
 end
+
+#This is the code for looking up music
 
 
 

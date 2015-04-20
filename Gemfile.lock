@@ -28,12 +28,16 @@ GEM
       xpath (~> 2.0)
     daemons (1.1.9)
     diff-lcs (1.2.5)
+    discogs-wrapper (2.1.1)
+      hashie (~> 2.1)
+      oauth (~> 0.4.7)
     dotenv (1.0.2)
     eventmachine (1.0.4)
     factory_girl (4.5.0)
       activesupport (>= 3.0.0)
     faker (1.4.3)
       i18n (~> 0.5)
+    hashie (2.1.2)
     httparty (0.13.3)
       json (~> 1.8)
       multi_xml (>= 0.5.2)
@@ -52,6 +56,7 @@ GEM
     multi_xml (0.5.5)
     nokogiri (1.6.5)
       mini_portile (~> 0.6.0)
+    oauth (0.4.7)
     pg (0.18.1)
     phantomjs (1.9.7.1)
     rack (1.6.0)
@@ -106,6 +111,7 @@ DEPENDENCIES
   activesupport
   bcrypt-ruby
   capybara
+  discogs-wrapper
   dotenv
   factory_girl
   faker
