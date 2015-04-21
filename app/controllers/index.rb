@@ -1,3 +1,5 @@
+require 'discogs-wrapper'
+
 #This is the sign-up page
 get '/session-viewer' do
   session.inspect
@@ -66,12 +68,6 @@ get '/:artist' do
 
   doc = Nokogiri::HTML(open(uri))
   @art = doc.xpath("//li")
-  p uri
-
-  auth_wrapper = Discogs::Wrapper.new("Artsee", app_key: "MUSIC_API_KEY", app_secret: "MUSIC_SECRET")
-  search = auth_wrapper.search("Nirvana", :per_page => 10, :type => :artist)
-
-  p search
 
   if @art.empty?
     erb :happy
@@ -80,7 +76,10 @@ get '/:artist' do
   end
 end
 
-#This is the code for looking up music
+#This will eventually be the working code for looking up music
 
+# auth_wrapper = Discogs::Wrapper.new("Artsee", app_key: "MUSIC_API_KEY", app_secret: "MUSIC_SECRET")
+# search = auth_wrapper.search("Nirvana", :per_page => 10, :type => :artist)
 
+# p search
 
