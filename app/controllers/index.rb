@@ -68,7 +68,6 @@ get '/:artist' do
   @art = doc.xpath("//li")
   p uri
 
-  wrapper = Discogs::Wrapper.new("Artsee")
   auth_wrapper = Discogs::Wrapper.new("Artsee", app_key: "MUSIC_API_KEY", app_secret: "MUSIC_SECRET")
   search = auth_wrapper.search("Nirvana", :per_page => 10, :type => :artist)
 
